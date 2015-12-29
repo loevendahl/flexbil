@@ -1,0 +1,31 @@
+
+## ATTRIBUTIONS to EXTERNAL AUTHORS
+ 
+ All resurces have been either licensed under GPL v3 or under a Creative Commons Attribution 3.0 license.
+
+ Flickr
+ ------------------
+
+	Some resources have been created by flickr.com users and are used to enhance this theme presentation.
+	All respources were searched within Creative Commons-licensed content, to use commercially and
+	to modify, adapt, or build upon:
+
+	* demo thumbnails
+	
+ Yusuke Kamiyamane
+ ------------------
+ 
+	Some resources have been created by Yusuke Kamiyamane for p.yusukekamiyamane.com and are used to enhance this theme:
+	
+	* Custom post type icons
+	
+ ~SimekOneLove
+ ------------------
+ 
+	Some rights reserved. This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License.
+	Some resources have been created by ~SimekOneLove for http://simekonelove.deviantart.com/#/d4c01cm and are used to enhance this theme:
+	
+	* Social icons widget
+	
+	
+

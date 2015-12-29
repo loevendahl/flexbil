@@ -1,0 +1,24 @@
+/* All bizz menu styling */
+#adminmenu #toplevel_page_bizzthemes div.wp-menu-image img,
+#adminmenu #toplevel_page_bizz-layout div.wp-menu-image img { 
+	height: 16px;
+	width: 16px;
+}
+#icon-bizzthemes { 
+	background: url('../images/bizzthemes-32.png') no-repeat;
+}
+
+/**
+ * HiDPI Displays
+ */
+@media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+
+	#icon-bizzthemes { 
+		background: url('../images/bizzthemes-32-2x.png') no-repeat;
+		background-size: 32px auto;
+	}
+
+}

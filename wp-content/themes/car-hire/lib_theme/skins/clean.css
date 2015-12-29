@@ -1,0 +1,42 @@
+/* CLEAN skin */
+
+body { 
+	background: #fff;
+}
+a, a:visited,
+.logo-spot a, .logo-spot a:link, .logo-spot a:hover, .logo-spot a:active,
+.widget .navbar-inverse .nav>li>a, .widget .navbar-inverse .nav>li>a,
+.widget .navbar-inverse .nav>li>a:focus, .widget .navbar-inverse .nav>li>a:hover { 
+	color: #0044DF;
+}
+.widget h3.widget-title { 
+	color: #000;
+	background: none;
+	padding-left: 0;
+}
+.widget .navbar-inverse .navbar-inner {
+	background: #f9f9f9;
+	border-color: #ddd;
+}
+.widget .navbar-inverse .nav .active>a, 
+.widget .navbar-inverse .nav .active>a:hover, 
+.widget .navbar-inverse .nav .active>a:focus  { 
+	background-color: #f2f2f2;
+	color: #333;
+}
+.step_wrapper legend{ 
+	border-color: #313131;
+}
+.clist li { 
+	border-bottom: 1px solid #313131;
+}
+.contact-info span.pmeta { 
+	color: #737373;
+}
+#header_area {
+	background: none;
+}
+#footer_area {
+	background: none;
+	border: none;
+}

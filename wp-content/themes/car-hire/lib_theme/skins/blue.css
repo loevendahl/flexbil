@@ -1,0 +1,38 @@
+body { 
+	background-color: #fff;
+}
+a, a:visited { 
+	color: #0B3D91;
+}
+.widget h3.widget-title { 
+	color: #0A3C91;
+}
+.widget .nav-menu {
+	background-color: #0B3D92;
+}
+.bookwrap { 
+	background: #fff; 
+	border: 1px solid #527DB8; 
+}
+.step_wrapper legend{ 
+	border-color: #527DB8;
+}
+.steps_tabs li a { 
+	background-color: #fff; 
+	border-color: #527DB8;
+}
+.steps_tabs li.active a { 
+	background-color: #527DB8;
+	border-color: #527DB8;
+	color: #fff;
+}
+.clist li { 
+	border-bottom: 1px solid #527DB8;
+}
+#header_area {
+	background-color: #f9f9f9;
+}
+
+.contact-info span.pmeta { 
+	color: #63A424;
+}

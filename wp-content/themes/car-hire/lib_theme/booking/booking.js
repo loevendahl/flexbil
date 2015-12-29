@@ -980,7 +980,7 @@ jQuery(document).ready(function($) {
 
 			$('.credit-card-payment').show();
 
-			$('.no-payment').show();
+			$('.no-payment').hide();
 
 			$('.credit-card-payment').find('input, select').addClass('validate');
 
@@ -1004,7 +1004,7 @@ jQuery(document).ready(function($) {
 
 	// load step 5
 
-	$("#submit_checkout, #submit_paypal").live("click", function(e) {
+	$("#submit_checkout, #submit_paypal, #submit_quickpay").live("click", function(e) {
 
 		e.preventDefault();
 

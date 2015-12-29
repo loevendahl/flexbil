@@ -1,0 +1,810 @@
+*** BizzThemes Framework Changelog **
+
+LEGEND
+    * [release]
+	* [feature]
+	* [fix]
+	* [improved]
+	* [deprecated]
+	
+2015.08.22 - version 7.9.5.9
+	* [fix]			comment text title
+	* [improved]	updated Bootstrap to v3.3.5
+	
+2015.06.10 - version 7.9.5.8
+	* [improved]	metabox API update
+	
+2015.06.03 - version 7.9.5.7
+	* [improved]	updated Bootstrap to 3.3.4
+	
+2015.05.08 - version 7.9.5.6
+	* [fix]			theme options access fix
+	
+2015.05.07 - version 7.9.5.5
+	* [improved]	added multicheck to taxonomy select
+	
+2015.04.27 - version 7.9.5.4
+	* [fix]			deleted Akismet dependency
+	* [improved]	WP 4.2 spinners
+	
+2015.03.16 - version 7.9.5.3
+	* [fix]			contact form and layout Builder
+	
+2015.02.25 - version 7.9.5.2
+	* [improved]	updated layout Builder
+	* [improved]	updated Bootstrap to 3.3.2
+	* [improved]	updated jsColor to 1.4.4
+	
+2014.12.03 - version 7.9.5.1
+	* [fix]			show full content for static front page
+	* [feature]		updated Bootstrap to 3.3.1
+	
+2014.10.25 - version 7.9.5.0
+	* [improved]	upgrade to new licensing system and new BizzThemes payments integration
+	
+2014.07.15 - version 7.9.4.9
+	* [fix]			builder design fixes
+	* [fix]			twitter widget fix
+	* [fix]			comments required variable fix
+	
+2014.07.03 - version 7.9.4.8
+	* [improved]	filtered all input widget text for WPML compatibility
+	* [feature]		updated Bootstrap to 3.2.0
+	
+2014.05.06 - version 7.9.4.7
+	* [fix]			removed media for 3.5 WP compatibility
+
+2014.04.17 - version 7.9.4.6
+	* [fix]			updated Akismet class to comply with new a plugin release
+	
+2014.02.27 - version 7.9.4.5
+	* [fix]			gallery lightbox filter
+	* [feature]		added bootstrap 3.1.1 library
+	
+2014.01.22 - version 7.9.4.4
+	* [fix]			Framework options "type" checking
+	* [fix]			Contact form sending works
+	
+2013.11.06 - version 7.9.4.3
+	* [improved]	comments widget singular textstring added
+	* [improved]	template Builder is now WordPress 3.8 compatible
+	
+2013.09.03 - version 7.9.4.2
+	* [improved]	taxonomies api text_money field update
+	
+2013.08.02 - version 7.9.4.1
+	* [fix]			[blog] shortcode now work in all of its glory
+	* [improved]	much improved SEO rankings
+	* [fix]			widget id echo for contact forms
+	* [fix]			contact form widget now works fine in ajax mode
+	* [improved]	added width option to Twitter Timeline widget
+	
+2013.07.11 - version 7.9.4.0
+	* [deprecated]	removed old Twitter Updates widget
+	* [feature]		added new Twitter Updates widget (embeded timeline)
+	* [feature]		new media upload function, works only on WP 3.5+
+	
+2013.06.27 - version 7.9.3.9
+	* [improved]	default options always visible
+	
+2013.06.18 - version 7.9.3.8
+	* [improved]	updated Twitter API to 1.1
+	* [deprecated]	removed ajax pagination for query posts and default content widgets
+	* [improved]	updated frame taxonomies api: working image uploads
+	
+2013.06.10 - version 7.9.3.7
+	* [fix]			framework options now render correctly
+	
+2013.05.28 - version 7.9.3.6
+	* [fix]			the_content for plugins
+	
+2013.05.11 - version 7.9.3.5
+	* [improved]	cache clear on theme update
+	* [fix]			better page template condition query
+	* [improved]	Updated metaboxes to 0.9.2 (Custom Metaboxes and Fields)
+	
+2013.04.26 - version 7.9.3.4
+	* [improved]	condition logic defined only once
+	
+2013.04.16 - version 7.9.3.3
+	* [improved]	added missing function for WP < 3.4 : get_page_template_slug()
+	* [feature]		added settings api class
+	
+2013.04.08 - version 7.9.3.2
+	* [fix]			clear browser cache on theme/frame update
+	* [fix]			template builder pointer events
+	
+2013.04.07 - version 7.9.3.1
+	* [fix]			touch sensitive template builder (mobile ready)
+	* [improved]	responsive administration panels
+	* [fix]			WP 3.6 compatibility fixes
+	* [improved]	template builder widgets work faster on all devices
+	* [improved]	retina-ready icons
+	* [fix]			RTL responsive admin support
+	* [deprecated]	admin icon seletion removed, only bizzthemes icon accepted
+	* [improved]	faster admin panel
+	* [improved]	bigger admin UI base font, 14px
+	* [deprecated]	removed default plugins: widget-bookmarks (Links), widget-authors, widget-tags, widget-pages
+	* [deprecated]	removed default plugins: widget-archives, widget-categories, widget-flickr, widget-calendar, widget-rich-textarea
+	* [improved]	added default WP widget: Pages
+	
+2013.03.26 - version 7.9.3.0
+	* [fix]			template builder grid structure is backwards compatible
+	* [fix]			feature pointers work again
+	
+2013.03.25 - version 7.9.2.0
+	* [fix]			container editing (move, disable) works again
+	* [improved]	updated Twitter Bootstrap to 2.3.1
+	* [improved]	updated theme options design - cleaned
+	* [improved]	added theme admin subpages as global variables
+	* [improved]	hidden inactive widgets by default, show theme with Screen Options for Builder
+	* [improved]	unifyied all button styles with WordPress standard CSS
+	* [improved]	cleaned template builder design, drop area more intuitive
+	* [improved]	added actual width per sidebar positon: only if grid columns is defined
+	* [improved]	when main area is disabled, open next free section by default
+	* [improved]	widget width appliance and proper placholder position
+	* [improved]	available widgets disabled on template builder index, template selection required before adding or removing
+	* [improved]	moved template selection to header, available widgets always visible
+	* [improved]	added templates info pointer on the template builder screen
+	* [improved]	removed show all widgets button
+	* [improved]	remove jQuery tools library, replace shortcode tricks with native jQuery functions
+	* [fix]			fix logo widget admin
+	* [deprecated]	removed all Fancybox lightbox script, recommending usage of Fancybox plugin: http://wordpress.org/extend/plugins/easy-fancybox/
+	* [improved]	added widget rules per each widget: template it was added in info
+	* [improved]	widgets add inside WordPress widget screen as Site-wide by default
+	* [improved]	updated jQuery UI to 1.10.1
+	* [improved]	fix and simplify/prettify admin style CSS file
+	
+2013.01.28 - version 7.9.1.2
+	* [fix]			Inactive widgets header fix
+	* [improved]	collapse widgets on the left hand side for cleaner view
+	* [improved]	removed sidebar name arrow from widget drop area
+	
+2013.01.25 - version 7.9.1.1
+	* [improved]	removed TimThumb and replacing it with native wp_get_image_editor
+	* [fix]			ajax.php url now work regardless of document path
+	* [fix]			contact form widget and template load normally via ajax
+	* [fix]			added 'bizzthemes' strings to all missing translation strings
+	* [improved]	custom file editor is now hooked into WP filesystem
+	
+2013.01.03 - version 7.9.1
+	* [improved]	Removing Bizz SEO definitely resets all SEO to WP default
+	* [improved]	updated TimThumb to 2.8.11
+	* [feature]		Added builder support for custom page templates
+	* [feature]		Added grid tree hook support, 'before_container_tree' and 'after_container_tree'
+	* [improved]	escape frametools exported single quotes
+	
+2012.12.25 - version 7.9.0
+	* [improved]	added custom arguments and a filter for paging function
+	* [improved]	modified post meta filters
+	* [fix]			updated builder loading indicator (WP 3.5 compat)
+	* [improved]	removed default "clearfix" class from grid container
+	* [improved]	Twitter Bootstrap library 2.2.2
+	* [improved]	renamed WordPress Loop widget to Default Content for better unerstanding of what it does
+	* [fix]			frame_tools.php default options now work with json files
+	
+2012.12.07 - version 7.8.9
+	* [fix]			frame_tools.php wrong file warning fixed
+	* [fix]			frame_tools.php upload now works with json files
+	
+2012.11.07 - version 7.8.8
+	* [fix]			only show bizz javascript where needed
+	* [improved]	updated jQuery UI to 1.9.1
+	* [improved]	added 404 error filter
+	* [fix]			Contact Form widget labels on save
+	
+2012.10.26 - version 7.8.7
+	* [improved] 	replaced PHP 'split' function with 'explode'
+	* [improved] 	option to remove container div/section when grid container id is empty
+	* [feature]		optimized framework for external ecommerce libraries like woocommerce, jigoshop etc.
+	* [improved] 	filtered woocommerce comments
+	* [improved] 	metaboxes date-time filed now has built in WP time formatting
+	* [improved]	updated jQuery UI to 1.9.0
+	* [improved] 	updated jsColor to 1.4.0
+	* [improved] 	default WP admin jQuery scripts by default
+	* [deprecated]	jwysiwyg script has been deprecated and Rich Textarea widget doesn't support it anymore
+	* [improved] 	restructured admin and theme scripts
+	* [improved] 	custom editor tabs
+	* [improved] 	loop content fixed missing args on theme switch
+	* [feature]		added option to replace grid as well 'bizz_replace_grids()'
+	* [fix]			fixed metaboxes and taxonomies existing value reading
+	
+2012.10.09 - version 7.8.6
+	* [improved] 	updated jQuery to 1.8.2
+	* [improved] 	added title filters
+	
+2012.09.17 - version 7.8.5
+	* [fix]			remote theme version, correctly showed
+	* [fix]			'bizzthemes' translation strings added
+	* [improved]	changed 'thumbnail' naming to 'featured image'
+	* [improved]	Custom Editor now highlights slected file as regular tabbed navbar
+	* [improved] 	updated jQuery to 1.8.1
+	* [improved]	more secure code, disabled any attempt to directly access a file
+	
+2012.08.30 - version 7.8.4
+	* [fix]			comments show up when no comments are present
+	
+2012.08.22 - version 7.8.3
+	* [fix]			frame updates link to correct theme and framework sources
+	* [feature]		added custom defined widget filter 'bizz_custom_widgets_filter'
+	* [fix]			WPML plugin now works without issues and is fully integrated
+	* [fix]			fixed thumbnail resizing for some multisite configurations
+	* [feature]		added function for custom string generation
+	* [improved]	updated jQuery UI to 1.8.23
+	* [improved] 	updated jQuery to 1.8.0
+	* [fix]			remote theme version check
+	* [feature]		Added full Twitter Bootstrap library support 2.1.0
+	
+2012.08.08 - version 7.8.2
+	* [deprecated]	get_theme_data replaced with wp_get_theme
+	* [fix]			frame_taxonomies.php returns no empty variables
+	* [fix]			frame_metaboxes.php returns no empty variables
+	* [fix]			template builder draggable width renders correctly
+	* [deprecated]	combined comments loop and form
+
+2012.08.02 - version 7.8.1
+	* [fix]			frame_html does not return empty variables any more.
+	* [fix]			show WP loop correctly if content is removed in the widget options
+	* [improved]	added time incrementation filter for the date_time metabox
+	* [fix]			empty widgets notification
+
+2012.07.30 - version 7.8.0
+	* [improved]	hidden layout.css inside custom editor
+	* [fix]			edit post link for WordPress Loop widget works fine now
+	
+2012.07.25 - version 7.7.9
+	* [improved]	added args filter for Query Posts widget
+	* [fix]			comments numbering shows ok now
+	* [fix]			added commnents_template filter for external plugins
+	
+2012.07.11 - version 7.7.8
+	* [improved]	updated jQuery UI to 1.8.21
+	* [fix]			design CP color pickup fix
+	
+2012.05.31 - version 7.7.7
+	* [improved]	added filters for the content loop
+	
+2012.05.30 - version 7.7.6
+	* [improved]	metaboxes.js tinymce editor fix for ajax post
+	* [feature]		added metaboxes support for taxonomies
+	* [improved] 	updated jQuery UI to 1.8.20
+	* [fix]			updated template select box design
+	* [improved] 	updated jQuery Tools to 1.2.7
+	
+2012.04.05 - version 7.7.5
+	* [improved]	replaced 'mail' function with 'wp_mail' function for contact form script
+	* [improved] 	main area opend by default	
+	* [improved] 	Links widget title now <h3>
+	* [improved] 	updated jQuery to 1.7.2
+	* [improved] 	added 'wp-content' to timthumb script for multisite
+	
+2012.03.20 - version 7.7.4
+	* [fix]			theme update works and doesn't show "Incompatible archive" warning anymore
+	* [fix]			disabled automatic WP theme update notifaction
+	
+2012.03.12 - version 7.7.3
+	* [fix]			three & four columns spacing in builder
+	* [improved]	updated TimThumb to 2.8.10
+	* [improved]	compressed and updated jQuery UI to 1.8.18
+	* [fix]			WP Loop widget: display thumbnails on single posts only
+	
+2012.03.03 - version 7.7.2
+	* [fix]			Gravity Forms custom field feature bug fix
+	* [fix]			fixed all plugin conflicts for the WP admin area
+	* [improved]	updated TimThumb to 2.8.9
+	* [improved]	updated jQuery Tools library to include the slideshow plugin
+	
+2012.02.21 - version 7.7.1
+	* [fix]			empty widgets notfication
+	* [improved]	empty widgets notfication, added as pointer
+	* [improved]	empty widgets notfication, shown for admins only
+	* [improved]	updated TimThumb to 2.8.8
+	
+2012.02.12 - version 7.7.0
+	* [fix]			updated TimThumb to 2.8.6
+	* [improved]	on reset, only layouts for current theme are deleted
+	* [feature]		notification about empty layouts
+	* [feature]		option to re-install framework
+	* [fix]			Firefox options menu dropdown alignment
+	* [improved]	theme administration is not RTL compatible
+	* [improved]	better builder JS rendering
+	* [improved]	updated jQuery Tools library to 1.2.6
+	* [improved]	moved hook definitions
+	
+2012.02.10 - version 7.6.9
+	* [deprecated]	removed support for custom template, replaced with hooks
+	
+2012.01.30 - version 7.6.8
+	* [improved]	much better builder grid nesting options
+	* [improved]	metabox bug fixes
+	* [improved]	compressed admin scripts
+	* [improved]	compressed and updated jQuery UI to 1.8.17
+	* [improved]	comments loop hook
+	* [improved]	added html5 filters
+	* [fix]			updated TimThumb to 2.8.5
+	* [fix]			backup tools now escape html special characters
+	
+2011.12.26 - version 7.6.7
+	* [fix]			updated TimThumb to 2.8.5
+	* [fix]			title_before and title_after for Links widget
+	* [fix]			"date_time" metabox works for the time field
+	
+2011.12.15 - version 7.6.6
+	* [fix]			adding all widgets into Site-wide section.
+
+2011.12.13 - version 7.6.5
+	* [fix]			further WordPress 3.3 compatibility
+	* [improved]	updated TimThumb to 2.8.4
+	* [improved]	contextual help
+	* [improved] 	updated jQuery to 1.7.1
+	* [improved] 	updated jQuery UI to 1.8.16
+	* [improved] 	updated Widgets JS
+	* [improved] 	redesigned and fully updated meta boxes API
+	* [improved] 	restructured most global variables
+	* [improved] 	added missing 'sidebar_admin_setup' action
+	* [improved] 	default WP Inactive Widgets
+	* [fix]			widgets, moved from inactive section now under correct condition
+	* [improved] 	option to remove default Bizz SEO
+	* [improved] 	removed widget backups (WP 3.3 has this built-in)
+	* [improved] 	cached all default widgets
+	* [improved] 	should load much faster
+	* [improved] 	compressed theme menu labels
+	* [fix]			options panel paddings and margins
+	* [feature]		added WP 3.3 feature pointers after theme activation
+	* [improved] 	compressed all frame images
+
+2011.10.23 - version 7.6.4
+	* [fix]			WordPress 3.3 compatibility
+	* [fix]			fixed menu separator in admin
+	* [improved]	tabbed theme options header
+	* [improved]	simplified branding controls
+	* [feature]		added theme options to admin bar on front
+	* [feature]		option to remove theme options from admin bar
+	* [feature]		option to remove admin bar altogether
+	* [improved]	all external scripts under secure https:// links
+	* [improved]	post metaboxes
+	* [improved]	updated TimThumb to 2.8.2
+	* [improved]	shortcodes work on free version
+	* [improved]	faster installation on first activation
+
+2011.10.02 - version 7.6.3
+	* [fix]			updated JScolor for design control panel to 1.3.9
+	* [fix]			optional navigation menu description
+	* [improved] 	updated jQuery to 1.6.4
+
+2011.09.12 - version 7.6.2
+	* [fix]			comments form widget class
+	* [improved] 	updated jQuery to 1.6.3
+	* [improved] 	updated TimThumb to 2.8
+	* [improved] 	added single author template to the Builder
+
+2011.08.27 - version 7.6.1
+	* [fix]			template builder: open/close widgets bug
+
+2011.08.24 - version 7.6.0
+	* [fix]	post 	type archives
+	* [improved] 	updated TimThumb to heavily updated version: faster and more secure
+	
+2011.08.04 - version 7.5.9
+	* [improved]	updated TimThumb image resizing script
+	* [improved]	ajax backup/recover of widgets
+	
+2011.07.26 - version 7.5.8
+	* [feature]		default demo widgets on install now optional
+	* [improved]	admin CSS for nested grid tree
+	* [improved]	buttons shortcode line-height fixed
+	* [improved]	updated TimThumb to 1.31
+	* [improved]	moved before_grid and after_grid hook before/after grid class
+	* [feature]		group WP galleries with rel attribute (lightbox galleries)
+	* [improved]	added WordPress loop option to hide post meta on single pages
+
+2011.07.03 - version 7.5.7
+	* [feature]		overhauled the whole HTML output
+	* [improved]	better code comments
+	
+2011.07.02 - version 7.5.6
+	* [fix]			fix for license control
+	* [feature]		added function to capture function output
+	* [improved]	updated jQuery to 1.6.2
+	* [improved]	updated jQuery UI to 1.8.14
+
+2011.06.29 - version 7.5.5
+	* [fix]			error with license control
+	* [fix]			error version control
+
+2011.06.26 - version 7.5.4
+	* [fix]			error with import/export tools
+	* [fix]			error with updates control
+	* [fix]			error with custom editor
+	
+2011.06.25 - version 7.5.3
+	* [fix]			error with license registration
+	
+2011.06.22 - version 7.5.2
+	* [fix]			notice when editing general Single template
+	* [improved]	updated TimThumb image resizing script
+	* [fix]			import Tools error
+	
+2011.06.14 - version 7.5.1
+	* [fix]			Template Builder: removed trashed pages from the list of posts
+	
+2011.06.14 - version 7.5.0
+	* [fix]			IE6, IE7 critical error
+	* [fix]			Query Posts widget
+	
+2011.06.06 - version 7.4.9
+	* [improved]	updated TimThumb image resizing script
+	* [improved]	open/close containers
+	* [improved]	layouts version_compare
+	* [improved]	fixed warnings and notices and removed 'eval' and 'base64_encode, base64_decode' where possible
+	* [improved]	slightly faster condition logic
+	* [improved]	transfered all file operation to WP_filesystem
+	* [improved]	improved youtube thumbnail detection, when used in new iframe embeds
+	* [improved]	moved all inline javascript into one file 'theme.all.min.js'
+	* [improved]	optmizied container query performance (one less loop)
+	* [improved]	renamed Settings to Framework
+	* [feature]		added patterns function
+	* [fix]			fixed serious bug, which didn't delete widget logic, when widgets were dragged to deletion
+	* [feature]		added [icon_tick] and [icon_cross] shortcodes
+	* [feature]		added the most powerfull hook yet: 'bizz_sidebar_grid'
+	* [improved]	exclude template builder from WP export
+	* [fix]			added custom_field fix for automatic thumbnails (thanks to Toby Lewis)
+	
+2011.06.01 - version 7.4.8
+	* [improved]	updated Builder styling (cleaner)
+	* [feature]		video embeds
+	* [feature]		added 'bizz_hook_after_headline' hook
+	* [improved]	updating notification off, when theme update not available
+	* [fix]			Disable Twitter widget when JetPack plugin is active
+	
+2011.05.15 - version 7.4.7
+	* [improved]	updated TimThumb image resizing script
+	* [improved]	updated jQuery script
+	* [improved]	Builder: ajax loaded pagination for single post types (200 posts per page)
+		
+2011.05.13 - version 7.4.6
+	* [improved]	resizable thumbnails: option to output as source or resized source
+	* [feature]		automatic theme and framework updater
+	* [fix]			custom ID for bizz_image script
+	* [improved]	metabox styling
+	* [improved]	Builder: single posts filter 1000 posts per page limit
+	
+2011.05.05 - version 7.4.5
+	* [improved]	Builder single tab selection: display text if none available
+	* [improved]	updated jQuery to 1.6
+	
+2011.05.04 - version 7.4.4
+	* [improved]	Logo widget
+	* [fix]			meta box notices
+	* [improved]	Options header cleaned
+	* [improved]	Moved theme documentation and support links to contextual Help tab
+	* [improved]	Highlighted 'Select a template to edit' box
+	* [feature]		action button shortcodes
+	* [improved]	updated timthumb script
+	* [improved]	updated jQuery UI script
+	* [improved]	added 'ajaxurl' variable for theme usage
+	* [improved]	contact form translations fix
+	* [improved]	excerpted content on WordPress Loop widget (when on home page)
+	* [fix]			html xmlns attribute
+	
+2011.04.20 - version 7.4.3
+	* [fix]			auto-cropped thumbnails now work with central european character sets
+	* [fix]			static Reading settings
+	
+2011.04.15 - version 7.4.2
+	* [fix]			thumbnail auto-resizing relative path fix
+	* [fix]			branding texts
+	* [improved]	fancybox title position
+	* [improved]	added back default WP 'language_atributes' function
+	* [improved]	added new thumbnail filters
+	
+2011.04.08 - version 7.4.1
+	* [fix]			Bookmarks renamed and title fixed
+	* [improved]	Builder: filter single categories
+	* [feature]		added date/time meta field
+	* [fix]			Fancybox js check
+	* [improved]	added .bmp image format to lightbox
+	* [improved]	updated TimThumb script
+	* [improved]	automatically rename 'custom-sample' to 'custom' folder name
+	
+2011.03.29 - version 7.4.0
+	* [fix]			single layouts tab selection fixed when no label name available
+	* [fix]			single layouts tab ajax loading positioning
+	* [improved]	renamed Front-end and Back-end to Footer and Admin
+	* [improved]	Fancybox script loads as regular css (IE6 support dropped)
+	* [improved]	Fancybox overlay on click
+	
+2011.03.28 - version 7.3.9
+	* [fix]			fixed broken images path
+	* [fix]			updated Fancybox script (compressed images and new script version)
+	* [fix]			Fancybox now active after ajax pagination
+	
+2011.03.24 - version 7.3.8
+	* [feature]		Builder now lists all active widgets on initial Builder page
+	* [improved]	Builder page totally redesigned to enhance faster productivity
+	* [improved]	ajaxed Builder page single post type template selection
+	* [improved]	Load default layouts correctly even if grids are empty
+	* [improved]	jQuery UI 1.8.11
+	* [fix]			Bookarks widget now filters link categories properly
+	* [improved]	old grids delete if saved grid structure is same as default one
+	* [fix]			FancyBox script now much faster
+	* [fix]			relative position for admin options panel
+	
+2011.03.17 - version 7.3.7
+	* [improved]	customizable xhtml filter
+	* [improved]	replaced PrettyPhoto with FancyBox lightbox plugin
+	* [improved]	removed all inline javascript code
+	* [improved]	added filters for doctype, body class and xhtml
+	* [improved]	cleaned white space
+	* [improved]	cleaner code comments
+	* [improved]	optimized performance, slightly faster site loading
+	* [improved]	all frame files now have translateable texts
+	
+2011.03.11 - version 7.3.6
+	* [fix]			fixed widget logic
+	
+2011.03.08 - version 7.3.5
+	* [improved]	better visibility for Builder step 1, 2
+	* [improved]	edit menus link inside navigation menu widget
+	* [improved]	usage of multiple themes on same framework and website
+	
+2011.03.08 - version 7.3.4
+	* [fix]			editor warnings
+	* [improved]	moved classes files into class folder
+	* [improved]	renamed Layouts to Builder
+	* [improved]	fixed all framework translations
+	
+2011.03.04 - version 7.3.3
+	* [fix]			PHP version check (5+ required)
+	* [improved]	show first grid area by default
+	* [improved]	updates control fixes
+	* [fix]			warnings for Query Posts widget
+	* [improved]	jquery upgrade 1.4.4 -> 1.5.1
+	* [improved]	jquery UI upgrade 1.8.9 -> 1.8.10
+	
+2011.02.25 - version 7.3.2
+	* [fix]			Query Posts widget meta info
+	
+2011.02.25 - version 7.3.1
+	* [fix]			PHP4 compatibility - [0] array level for Loop
+	* [fix]			meta comments translations fix
+	
+2011.02.25 - version 7.3.0
+	* [fix]			PHP4 compatibility - array_combine() function
+	* [fix]			PHP4 compatibility - 'public function' removed, now just 'function'
+	
+2011.02.25 - version 7.2.9
+	* [fix]			Rich textarea widget (bot saving editor modifications)
+	
+2011.02.25 - version 7.2.8
+	* [improved]	faster connection detection
+	
+2011.02.23 - version 7.2.7
+	* [fix]			fixed WP warnings and suggestions (debug mode)
+	* [fix]			fixed connection check function
+	* [improved]	reset layouts to blank now available
+	
+2011.02.18 - version 7.2.6
+	* [improved]	updated TimThumb script
+	* [improved]	added posts loop hooks
+	
+2011.02.15 - version 7.2.5
+	* [improved]	Layouts: optimized introduction image
+	* [fix]			Contact form now works with Aksimet deactivated
+	* [feature]		TOOLS -> import/export all options and layouts
+	* [improved]	Updated jQuery UI
+	* [improved]	compressed all admin scripts
+	* [improved]	compressed all theme scripts
+	* [improved]	Theme as demo by default or on preview
+	
+2011.02.10 - version 7.2.4
+	* [improved]	Menu labels name optmization (Framework -> Settings)
+	
+2011.02.10 - version 7.2.3
+	* [improved]	Thumbnails: added support for YouTube video thumbnails
+	* [fix]			Google fonts API calling to non-existent fonts
+	
+2011.02.10 - version 7.2.2
+	* [fix]			Layout query for different themes on same framework
+	* [fix]			Check if theme exists (frame_functions - tabs)
+	* [improved]	Added additional hooks and filter to all widgets
+	* [improved]	Menu labels name optmization
+	
+2011.02.07 - version 7.2.1
+	* [improved]	WP Loop widget
+	* [improved]	Query Posts widget
+	
+2011.02.05 - version 7.2.0
+	* [fix]			Tabs shortcode fix
+	
+2011.02.03 - version 7.1.9
+	* [improved]	mark all layouts and widgets for specific theme
+	
+2011.01.28 - version 7.1.8
+	* [improved]	don't crop images until custom folder is present
+
+2011.01.27 - version 7.1.7
+	* [fix]			hooked widgets
+	* [feature]		defaults set on preview or first acivation
+
+2011.01.26 - version 7.1.6
+	* [fix]			jwysiyg editor
+
+2011.01.24 - version 7.1.5
+	* [fix]			Twitter date link (Twitter widget)
+	* [improved]	tabs padding fix when no thumbnail is displayed
+	* [fix]			post cats and tags fix
+
+2011.01.12 - version 7.1.4
+	* [fix]			correct grid container call if changed
+	* [fix]			tabs avatar fix for comments if size = 0
+	
+2011.01.12 - version 7.1.3
+	* [improved]    NoConflict for all scripts
+	* [fix]			PHPurchase plugin fix
+	* [fix]			Gravity forms plugin fix
+	* [improved]	Updated Google Fonts library
+	* [improved]	Faster Google Fonts API calls
+	
+2011.01.06 - version 7.1.2
+	* [improved]    Optmized frame functions code
+	* [improved]    Updated jwysiwyg editor
+	* [improved]    Added warning for non-writeable custom folder
+	* [improved]    Toggle all layout areas
+	* [improved]	jQuery no conflicts
+	* [improved]	javaScript optimization
+	* [improved]	code cleanup
+	* [improved]	performance increase (apx. 30% faster)
+	* [deprecated]	Branding widget - replaced with branding filter
+	
+2010.12.12 - version 7.1.1
+	* [improved]    Metabox for custom post types
+	* [improved]    SEO metabox for custom post types
+	* [improved]    Hide framework update if theme update is available
+	* [improved]    Updated PrettyPhoto script
+	* [improved]    Updated jQuery UI script
+	* [improved]    Updated jQuery Tools script
+	
+2010.12.05 - version 7.1.0
+	* [fix]         Herarchy condition fix for multi arrays
+	* [fix]         Singular + Archive hierarchy fix
+	* [fix]         Notices now better for layout engine
+	* [fix]         Serialization issue fixed
+	* [improved]    Hide empty grids
+	* [improved]    Unified header/footer
+	* [improved]    Design control saving
+	* [improved]    Archives for custom post types
+	* [improved]    Optimized frame functions stacking
+	* [improved]    jQuery upgrade 1.4.3 -> 1.4.4
+	* [improved]    TimThumb upgrade 1.16 -> 1.19 (much faster)
+	
+2010.11.26 - version 7.0.9
+	* [fix]         Fixed license control (masked password)
+	* [improved]    Unified header/footer
+	* [improved]    Added more branding options (show/hide menu labels, login logo)
+	* [improved]    Simplifed layout control management
+	* [improved]    Much faster theme activation
+	
+2010.11.14 - version 7.0.8
+	* [fix]         Fixed qutation marks inside serialized data strings
+	
+2010.11.14 - version 7.0.7
+	* [fix]         PrettyPhoto reference to facebook theme only
+	* [fix]         Widgets are regisered after class is initiated
+	* [improved]    Added support for thumbnail cropping position and selflinking
+	
+2010.11.03 - version 7.0.6
+	* [feature]     Added custom page templates (a blessing for hard core WP ninjas)
+	* [fix]         Fixed condition logic for singular post types
+	* [fix]         PrettyPhoto: caption fix and faster loading
+	* [improved]    TimThumb load from cache (much faster)
+	
+2010.11.03 - version 7.0.5
+	* [fix]         Grid not saving under certain circumstances
+	
+2010.11.03 - version 7.0.4
+	* [fix]         Array keys warning
+	
+2010.11.03 - version 7.0.3
+	* [fix]         Unset wp_inactive_widgets when needed
+	* [improved]    Added changelog to updates control
+	* [fix]         Activation alert (frame_settings)
+	* [improved]    Faster Show All Widgets toggle
+	* [improved]    Added new shortcodes (boxes, buttons, social)
+	* [fix]         No error if there are no posts/pages
+	
+2010.10.23 - version 7.0.2
+	* [fix]         Unset wp_inactive_widgets when needed
+	
+2010.10.22 - version 7.0.1
+	* [fix]         Logo widget
+	* [fix]         Widget width on drag
+	* [improved]    Compressed scripts & faster saving
+	* [feature]     Default grids and widgets + reset all option
+	* [feature]     Recover widgets, when themes switch
+	
+2010.10.11 - version 7.0.0
+	* [improved]    major frame update, which makes it incompatible for past releases
+	
+2010.9.1 - version 6.3.1
+	* [fix]         Options deleted after inserting adsense
+	
+2010.9.1 - version 6.3.0
+	* [improved]    Removed navigation notice upon theme activation
+	* [improved]    Improved scripts handling
+	* [feature]     Added shortcodes libaries
+	* [feature]     Enhanced overall performance
+	* [fix]         Fixed post meta issue
+	
+2010.9.1 - version 6.2.9
+	* [fix]         Twitter returns emtpy tweets
+	* [feature]     Added spam checker function
+	* [improved]    Contact form now uses Akismet for spam detection
+	
+2010.9.1 - version 6.2.8
+	* [feature]     AJAX Upload field for widgets
+	* [improved]    Layout stylesheet before custom.css
+	
+2010.9.1 - version 6.2.7
+	* [fix]         Default checkboxes can now be turned off
+	
+2010.9.1 - version 6.2.6
+	* [fix]         Contact form fix (permalinks now work)
+	* [fix]         FAQ template fix and Breadcrumb fix as well
+	* [feature]     Added classes into framework instead of lib_theme
+	* [improved]    Theme saving now faster and safer, no lost data during the process
+	
+2010.9.1 - version 6.2.5
+	* [feature]     Sort and check posts in theme options panel 	
+	* [fix]         Comment trackbacks
+	* [fix]         Twitter RSS error (SimplePie correction)
+	* [feature]     Simple contact form
+	
+2010.9.1 - version 6.2.4
+	* [feature]     Sort and check images with descriptions in theme options panel 
+	* [improved]    bizz_headline() archive tags now h2
+	* [improved]    upload option id simplified
+	* [fix]         PrettyPhoto script
+	* [fix]         Stripslashes
+	* [fix]         Twitter RSS error
+	* [improved]    Eliminated all PHP notices if debug mode is on
+	* [improved]    Auto image resize script
+	* [improved]    Added support for WP thumbnail images & deleted old bizz thumbnails
+	* [improved]    Unified theme framework for all versions (pretty obvious step, huh?)
+	
+2010.9.1 - version 6.2.3
+	* [fix]         Frame editor update alert fixed
+	* [fix]         Uploaded image in metabox now appears if uploaded
+	* [fix]         External frame scripts now loaded via Google
+	* [improved]    Added tables to JWYSIWYG editor
+	* [improved]    Improved twitter hosted script (loads instantly)
+	
+2010.9.1 - version 6.2.2
+	* [fix]         WP 2.9: Call to undefined function wp_get_nav_menus() fixed
+	
+2010.9.1 - version 6.2.1
+	* [feature]     Notify users when WP 3.0 and no custom menus are created
+	
+2010.9.1 - version 6.2
+	* [feature]     Added bizz_feed_spot() action
+	* [deprecated]  Simple Contact form excluded
+	* [deprecated]  Page order ability (making the way to WP 3.0)
+	* [deprecated]  Custom Ajax login excluded
+	
+2010.9.1 - version 6.1
+	* [improved]    Added username field to feedback form
+	* [fix]         Removed WP 3.0 alert message
+	* [improved]    Added custom post types to free version as well
+	* [improved]    Added body scripts to Blog Stats and Scripts settings
+	* [improved]    Commercial theme updates redirected to membership account
+	* [improved]    Updates control display only theme update if both are avaialble (theme and framework)
+	* [fix]         Moved Custom Post Types to theme library
+	* [improved]    Added translations for Updates control panel
+	
+2010.9.1 - version 6.0
+	* [release]     Initial framework changelog started.
+	
+	
+	
+	
+	

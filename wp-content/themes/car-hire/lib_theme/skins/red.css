@@ -1,0 +1,29 @@
+body { 
+	background-color: #fff;
+}
+a, a:visited,
+.logo-spot a, .logo-spot a:link, .logo-spot a:hover, .logo-spot a:active { 
+	color: #D80000;
+}
+.widget h3.widget-title { 
+	color: #666;
+}
+.bookwrap { 
+	background: #FFF9F9; 
+	border: 1px solid #EA4D4B; 
+}
+.step_wrapper legend{ 
+	border-color: #EA4D4B;
+}
+.steps_tabs li a { 
+	background-color: #FFF9F9; 
+	border-color: #EA4D4B;
+}
+.steps_tabs li.active a { 
+	background-color: #EA4D4B;
+	border-color: #EA4D4B;
+	color: #fff;
+}
+.clist li { 
+	border-bottom: 1px solid #EA4D4B;
+}

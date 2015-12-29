@@ -1,0 +1,38 @@
+body { 
+	background-color: #fff;
+}
+a, a:visited,
+.logo-spot a, .logo-spot a:link, .logo-spot a:hover, .logo-spot a:active {
+	color: #1A885F;
+}
+.widget h3.widget-title { 
+	color: #444;
+}
+.widget .navbar-inverse .navbar-inner {
+	background: #198A6C;
+}
+.navbar-inverse .nav>li>a {
+	color: #f2f2f2;
+}
+.bookwrap { 
+	background: #E2F0E2; 
+	border: 1px solid #12634D; 
+}
+.step_wrapper legend{ 
+	border-color: #12634D;
+}
+.steps_tabs li a { 
+	background-color: #E2F0E2; 
+	border-color: #12634D;
+}
+.steps_tabs li.active a { 
+	background-color: #12634D;
+	border-color: #12634D;
+	color: #fff;
+}
+.clist li { 
+	border-bottom: 1px solid #12634D;
+}
+#header_area {
+	background: #E2F0E2;
+}
