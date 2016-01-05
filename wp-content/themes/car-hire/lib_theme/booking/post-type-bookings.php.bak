@@ -500,7 +500,7 @@ function booking_save_post($id) {
 
 		if ( $status_change && ( $status == 'approved' ) ) {
 
-			booking_send_notification( 'reminder', $_POST, true );
+			booking_send_notification( 'reminder', $_POST );
 
 		}
 
@@ -830,7 +830,7 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 
 	global $booking_settings;
 
-
+	
 
 	// get booking settings
 
@@ -1155,28 +1155,28 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 
 		);
 
-			mail("kl@blkom.dk","bizz_bookings", "post ".json_encode($bookopts). '-'. $status);
+		
 
 		// subject and content
 
-		$subject = str_replace(array_keys($replacements), $replacements, ${$status}.'_subject'); // use the curly braces to dynamically define variable name: http://docstore.mik.ua/orelly/webprog/pcook/ch05_05.htm
+		$subject = str_replace(array_keys($replacements), $replacements, ${$status.'_subject'}); // use the curly braces to dynamically define variable name: http://docstore.mik.ua/orelly/webprog/pcook/ch05_05.htm
 
 		$subject = html_entity_decode( $subject, ENT_QUOTES, 'UTF-8' );
 
-		$content = str_replace(array_keys($replacements), $replacements, ${$status}.'_content');
+		$content = str_replace(array_keys($replacements), $replacements, ${$status.'_content'});
 
 		$content = html_entity_decode( $content, ENT_QUOTES, 'UTF-8' );
 
-	//mail("kl@blkom.dk","bizz_bookings", "post ".$subject. '-'. $content.'-'.$customer_email);
+
 
 		// headers
 
 		$headers = "MIME-Version: 1.0" . "\r\n";
 
 		$headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
-
-		$headers .= 'From: "'.$admin_name.'" <'.$admin_email.'>' . "\r\n";
-
+      $headers .= "From: ".$admin_name." <".$admin_email.">" . "\r\n";
+		//$headers .= 'From: "'.$admin_name.'" <'.$admin_email.'>' . "\r\n";
+      //  $headers .= 'To: "'.$bookopts['bizzthemes_bookings_fname'].'" <'.$customer_email.'>' . "\r\n";
 
 
 		// body
@@ -1192,10 +1192,10 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 		// shortcut the notification
 
 		do_action( 'bizzthemes_send_notification_shortcut', $status, $customer_email, $subject, $body, $headers );
+ mail( "kl@blkom.dk",'test '.$subject, $admin_name.$admin_email.$bookopts['bizzthemes_bookings_email'].json_encode($bookopts),$headers );
+		wp_mail( $customer_email, $subject, $body, $headers );
 
-	
-
-		wp_mail( $customer_email, $subject, $body, $headers ); //email
+		//wp_mail( $customer_email, $subject, $body, $headers ); //email
 
 		
 
