@@ -597,6 +597,10 @@ function booking_send_notification( $status = '', $bookopts = '', $convert = fal
 		$bookopts['bizzthemes_bookings_number_passengers'] 	= $bookopts['customer_number_passengers'];
 
 		$bookopts['bizzthemes_bookings_comm_que'] 			= $bookopts['customer_comments'];
+//added KL	
+		$bookopts['bizzthemes_bookings_wpuser'] 			= $bookopts['customer_wpuser'];
+		
+		$bookopts['bizzthemes_bookings_wppass'] 			= $bookopts['customer_wppass'];
 
 	}
 
@@ -824,7 +828,7 @@ function bizz_send_event_after_email( $tracking_id = '' ) {
 
 function booking_send_notification_email( $status = '', $bookopts = '' ) {
 
-	global $booking_settings;
+	global $booking_settings, $ultimatemember;
 
 	
 
@@ -935,10 +939,58 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 		}
 
 
+//KL added
+//user account?
+ $bookuser = get_user_by( 'email', $bookopts['bizzthemes_bookings_email'] );
+  $pass = get_user_meta( $bookuser, 'bizzthemes_bookings_pass', true); 
 
+if(!$bookuser){
+	
+$bookuserdata = array(
+    'user_login'  =>  $bookopts['bizzthemes_bookings_email'],
+	'user_email'  =>  $bookopts['bizzthemes_bookings_email'],
+	'user_pass'  =>  wp_generate_password( $length=6, $include_standard_special_chars=false ),
+	'role'       =>  'subscriber',
+    'first_name'    =>  $bookopts['bizzthemes_bookings_fname'],
+    'last_name'   =>  $bookopts['bizzthemes_bookings_lname']  
+);
+
+$bookuser = wp_insert_user( $bookuserdata ) ;
+$pass = 	$bookuserdata['user_pass'];
+add_user_meta($bookuser,'account-status','approved');
+add_user_meta($bookuser,'wp-approve-user','1');
+add_user_meta($bookuser,'wp-approve-user-mail-sent','1');
+add_user_meta($bookuser,'bizzthemes_bookings_pass',$pass);
+if($ultimatemember){
+		
+			um_fetch_user( $bookuser );
+			$ultimatemember->user->approve();
+}
+
+/*
+$user_approved = get_user_meta( $bookuser, 'wp-approve-user', true ); 
+if(!$user_approved){
+	
+}else{
+	update_user_meta($bookuser,'wp-approve-user','1');
+}
+$user_e_sent = get_user_meta( $bookuser, 'wp-approve-user-mail-sent', true );
+if(!$user_e_sent){
+	
+}else{
+	update_user_meta($bookuser,'wp-approve-user-mail-sent','1');
+}
+*/
+}
+if($status == 'approved'){
+$logininfo = '<tr><td>'.__('Account login', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_email'] .'</td></tr><tr><td>'.__('Account password', 'bizzthemes').' </td><td>'.$pass.'</td></tr>';
+}
+//get all booking data if post_ID is set (e.g. from admin)
+$bdata= get_post_meta($bookopts['post_ID']);
+//KL added end
 		// get booking settings
 
-		$admin_email = $bookopts['bizzthemes_bookings_dealer_email_id']; //$opt_b['admin_email'];
+		$admin_email = ($bookopts['bizzthemes_bookings_dealer_email_id'] ? $bookopts['bizzthemes_bookings_dealer_email_id'] : $bdata['bizzthemes_bookings_dealer_email_id'][0]); //$opt_b['admin_email'];
 
 		$admin_name = $opt_b['admin_name'];
 
@@ -1069,8 +1121,9 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 			<tr><td colspan="2"><strong>'.__('Customer?', 'bizzthemes').'</strong> </td></tr>
 
 			<tr><td>'.__('Tracking ID', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_track'].'</td></tr>
-
-			<tr><td>'.__('Customer Title', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_ctitle'].'</td></tr>
+			
+			'.$logininfo.'
+		   <tr><td>'.__('Customer Title', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_ctitle'].'</td></tr>
 
 			<tr><td>'.__('First Name', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_fname'].'</td></tr>
 
@@ -1169,7 +1222,7 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 		$headers = "MIME-Version: 1.0" . "\r\n";
 
 		$headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
-       //$headers .= "From: ".$admin_name." <".$admin_email.">" . "\r\n";
+     $headers .= "From: ".$admin_name." <".$admin_email.">" . "\r\n";
 		//$headers .= 'From: "'.$admin_name.'" <'.$admin_email.'>' . "\r\n";
       //  $headers .= 'To: "'.$bookopts['bizzthemes_bookings_fname'].'" <'.$customer_email.'>' . "\r\n";
 
@@ -1186,9 +1239,13 @@ function booking_send_notification_email( $status = '', $bookopts = '' ) {
 
 		// shortcut the notification
 
-		//do_action( 'bizzthemes_send_notification_shortcut', $status, $customer_email, $subject, $body, $headers );
-    //   mail( $bookopts['bizzthemes_bookings_email'],$subject, json_encode($bookopts),$headers );
-		wp_mail( $customer_email, $subject, $body, $headers );
+		do_action( 'bizzthemes_send_notification_shortcut', $status, $customer_email, $subject, $body, $headers );
+
+
+ mail( $bookopts['bizzthemes_bookings_email'],$subject, $body ,$headers );
+		
+		
+
 
 		//wp_mail( $customer_email, $subject, $body, $headers ); //email
 

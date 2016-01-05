@@ -979,10 +979,10 @@ jQuery(document).ready(function($) {
 			$('.paypal-payment').hide();
 
 			$('.credit-card-payment').show();
-             $('.quickpay-payment').show();
-			$('.no-payment').hide();
-            /*	$('.no-payment').show();
-			$('.credit-card-payment').find('input, select').addClass('validate');*/
+
+			$('.no-payment').show();
+
+			$('.credit-card-payment').find('input, select').addClass('validate');
 
 		}
 
@@ -1004,7 +1004,7 @@ jQuery(document).ready(function($) {
 
 	// load step 5
 
-	$("#submit_checkout, #submit_paypal, #submit_quickpay").live("click", function(e) {
+	$("#submit_checkout, #submit_paypal").live("click", function(e) {
 
 		e.preventDefault();
 
@@ -2272,7 +2272,8 @@ function loadStepFive(params_array) { // Checkout
 
 		loading.css('display', 'none');
 
-	
+		
+
 		if (cookie_data.process == "success") {
 
 		
@@ -2280,8 +2281,8 @@ function loadStepFive(params_array) { // Checkout
 			// Custom redirect
 
 			if ( cookie_data.redirect && cookie_data.payment_method != "paypal" ) {
-    
-				window.location = "http://www.flexbil.com/?qplink="+cookie_data.redirect;
+
+				window.location = cookie_data.redirect;
 
 				return;
 
