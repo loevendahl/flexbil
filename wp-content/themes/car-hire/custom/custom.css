@@ -1,18 +1,169 @@
-/*
-File:			custom.css
-Description:	Custom styles for Your Theme
-
-HOW TO USE THIS FILE:
-
-Override any class you want and it will change default styling to suit your needs.
-
-	1. Activate custom.css file in theme admin panel
-	2. Open style.css file and find any clasess you want to override
-	3. Copy classes to override in this file, put them outside green commented area
-
-
-START OVERRIDING / ADDING NEW CLASSES BELOW THIS LINE */
-.foot-logo .powered {
-padding: 0px;
-display:none;
+/*
+
+File:			custom.css
+
+Description:	Custom styles for Your Theme
+
+
+
+HOW TO USE THIS FILE:
+
+
+
+Override any class you want and it will change default styling to suit your needs.
+
+
+
+	1. Activate custom.css file in theme admin panel
+
+	2. Open style.css file and find any clasess you want to override
+
+	3. Copy classes to override in this file, put them outside green commented area
+
+
+
+
+
+START OVERRIDING / ADDING NEW CLASSES BELOW THIS LINE */
+body{
+	
+	background: #ececec;
+	
+}
+.foot-logo .powered {
+
+padding: 0px;
+
+display:none;
+
+}
+a, a:visited, .logo-spot a, .logo-spot a:link, .logo-spot a:hover, .logo-spot a:active, .widget .navbar-inverse .nav>li>a, .widget .navbar-inverse .nav>li>a, .widget .navbar-inverse .nav>li>a:focus, .widget .navbar-inverse .nav>li>a:hover {
+    color: #000066;
+}
+.navbar-collapse {
+    padding-right: 0px;
+    padding-left: 5px;
+}
+.nav>li.disabled>a {
+    color: #eee;
+}
+#main_area{
+
+	background: #ffffff;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #cecece;
+	
+}
+
+#footer_area{
+
+	background: #f7f7f7;
+  
+	
+}
+#footer_area ul{
+    padding-left: 15px;
+	
+  
+	
+}
+  
+#footer1_area{
+	position: relative;
+	bottom: 0px;
+	display: block;
+	background: #ececec;
+    border-top: 1px solid #e3e3e3;
+	
+}
+#top_area{
+		background-color: #f7f7f7;
+	
+}
+#headline_area {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 10px 0; 
+	border-bottom: 1px solid #ddd;
+}
+#headline_area h3{
+    font-size: 1.3em;
+   
+}
+article .headline_area{
+	
+	display: none;
+}
+
+.top_full .widget {
+    padding: 5px 0 5px 0;
+    font-size: 0.8em;
+	text-align: right;
+   
+}
+
+.navbar-inverse {
+    background-color: transparent; 
+     border-color: transparent; 
+}
+.widget .navbar-inverse .brand, .widget .navbar-inverse .nav>li>a, .widget .navbar-inverse .nav .active>a, .widget .navbar-inverse .nav .active>a:hover, .widget .navbar-inverse .nav .active>a:focus {
+    color: #9d9d9d;
+}
+
+.widget .navbar-inverse .nav>li>a:focus, .widget .navbar-inverse .nav>li>a:hover, .widget .navbar-inverse .nav .active>a, .widget .navbar-inverse .nav .active>a:hover, .widget .navbar-inverse .nav .active>a:focus {
+    background-color: #ffffff;
+	color: #444;
+}
+#header_area {
+    background: #ffffff;
+	 padding-top: 8px;
+    border-bottom: 1px dashed #ddd;
+}
+#featured_area {
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.steps_tabs_container{
+	
+	background-color: rgba(0, 0, 0, 0.3);
+     color: #f4f4f4;
+		-webkit-border-radius: 20px 20px 0px 0px;
+	-moz-border-radius: 20px 20px 0px 0px;
+	border-radius: 20px 20px 0px 0px;
+}
+.steps_tabs {
+    margin-bottom: 0;
+    margin-left: 0px;
+
+}
+.bookwrap{
+	-webkit-border-radius: 0px 0px 20px 20px;
+	-moz-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+button[type="reset"]{
+	display: none;
+	
+}
+
+#bizz_slider-2{
+	display: none;
+	}
+#text-9{
+	text-align: right;
+}
+#text-9 img{
+	margin-top: 15px;
+	height: 32px;
+}
+@media (min-width: 768px){
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #cecece;
 }
