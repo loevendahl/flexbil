@@ -456,7 +456,7 @@ function bizz_booking_validate() {
 			// Page ID by page name
 
 			$location_of_pickup = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$params["location_of_pickup"]."' AND post_type = 'bizz_locations'");
-
+            
 			$location_of_pickup = ( $location_of_pickup ) ? $location_of_pickup : $params["location_of_pickup"];
 
 			$location_of_pickup_slug = get_post( $location_of_pickup );
@@ -1088,7 +1088,11 @@ function bizz_booking_validate() {
 			// save extras: END
 
 			add_post_meta($this_post_id, 'bizzthemes_bookings_pickup', $bookopts['pickup_location_slug']);
-
+			
+			add_post_meta($this_post_id, 'pickup_location_name', $carhire_cookie->location_of_pickup_name);
+			
+			add_post_meta($this_post_id, 'return_location_name', $carhire_cookie->location_of_return_name);
+			
 			add_post_meta($this_post_id, 'bizzthemes_bookings_return', $bookopts['return_location_slug']);
 
 			add_post_meta($this_post_id, 'bizzthemes_bookings_date1', $bookopts['pickup_date']);
@@ -1247,8 +1251,6 @@ function bizz_booking_validate() {
 
 			$body .= "<tr><td>".__('Tracking ID', 'bizzthemes')." </td><td>".$bookopts['tracking_id']."</td></tr>";
 
-			$body .= "<tr><td>".__('Customer Title', 'bizzthemes')." </td><td>".$bookopts['customer_title']."</td></tr>";
-
 			$body .= "<tr><td>".__('First Name', 'bizzthemes')." </td><td>".$bookopts['customer_fname']."</td></tr>";
 
 			$body .= "<tr><td>".__('Last Name', 'bizzthemes')." </td><td>".$bookopts['customer_lname']."</td></tr>";
@@ -1258,14 +1260,6 @@ function bizz_booking_validate() {
 			$body .= "<tr><td>".__('Phone', 'bizzthemes')." </td><td>".$bookopts['customer_phone']."</td></tr>";
 
 			$body .= "<tr><td>".__('Contact Option', 'bizzthemes')." </td><td>".$bookopts['customer_contact_option']."</td></tr>";
-
-			$body .= "<tr><td>".__('Country', 'bizzthemes')." </td><td>".$bookopts['customer_country']."</td></tr>";
-
-			$body .= "<tr><td>".__('State/Province', 'bizzthemes')." </td><td>".$bookopts['customer_state']."</td></tr>";
-
-			$body .= "<tr><td>".__('Postcode/ZIP', 'bizzthemes')." </td><td>".$bookopts['customer_zip']."</td></tr>";
-
-			$body .= "<tr><td>".__('Address', 'bizzthemes')." </td><td>".$bookopts['customer_address']."</td></tr>";
 
 			$body .= "<tr><td>".__('Comments/Questions', 'bizzthemes')." </td><td>".$bookopts['customer_comments']."</td></tr>";
 
@@ -1288,8 +1282,6 @@ function bizz_booking_validate() {
 			$body .= "<tr><td>".__('Start Date and Time', 'bizzthemes')." </td><td>".$pickup_date_format.' @ '.$pickup_time_format."</td></tr>";
 
 			$body .= "<tr><td>".__('Return Date and Time', 'bizzthemes')." </td><td>".$return_date_format.' @ '.$return_time_format."</td></tr>";
-
-			$body .= "<tr><td>".__('Duration', 'bizzthemes')." </td><td>".$bookopts['duration']."</td></tr>";
 
 			$body .= "<tr><td colspan='2'><strong>".__('Payment?', 'bizzthemes')."</strong> </td></tr>";
 
@@ -1327,6 +1319,7 @@ function bizz_booking_validate() {
 			// notification function inside post-type-bookings.php
 //added KL. Creditcard Notifications are sent from callback
 if($form_data['payment_method'] !='creditcard'){
+	$bookopts["post_ID"] = $this_post_id;
 			booking_send_notification( 'customer', $bookopts, true );
 }
 			
@@ -1557,6 +1550,10 @@ function bizz_return_cars( $carhire_cookie='', $slots_array=array(), $pricing_po
 		// vars
 
 		$availability = ( $available['date'] == 'ok' && $available['location'] == 'ok' ) ? 1 : 0;
+		
+		//only list from the dealer cars at the dealers locations
+         $availability = ( $custom["bizzthemes_car_location"][0] == $carhire_cookie["location_of_pickup"]  ? 1 : 0);
+		 //
 
 		$cost = bizz_car_price( $car_post->ID, $custom["bizzthemes_car_type"], $carhire_cookie, 0, $slots_array, $pricing_posts, '', $opt_s );
 
@@ -2867,8 +2864,8 @@ function get_bizz_currency( $currency = '', $key = 'symbol' ) {
 		'CAD' => array( 'name' => __( 'Canadian Dollars (&#36;)', 'bizzthemes' ), 'symbol' => '&#36;' ),
 
 		'CZK' => array( 'name' => __( 'Czech Koruna (&#75;&#269;)', 'bizzthemes' ), 'symbol' => '&#75;&#269;' ),
-
-		'DKK' => array( 'name' => __( 'Danish Krone', 'bizzthemes' ), 'symbol' => '&#107;&#114;' ),
+        'DKK' => array( 'name' => __( 'Danish Krone', 'bizzthemes' ), 'symbol' => 'DKK ' ),
+		//'DKK' => array( 'name' => __( 'Danish Krone', 'bizzthemes' ), 'symbol' => '&#107;&#114;' ),
 
 		'HKD' => array( 'name' => __( 'Hong Kong Dollar (&#36;)', 'bizzthemes' ), 'symbol' => '&#36;' ),
 
@@ -3748,7 +3745,7 @@ switch ($qp_status) {
 			
 			//activate user account login
 			 $bookuser = get_user_by( 'email', $bookopts['bizzthemes_bookings_email'] );
-
+             $bookopts['post_ID'] = $post_id;
 	
 			
 			booking_send_notification_email( 'approved', $bookopts);

@@ -86,10 +86,13 @@ class my_vehicles extends bizz_custom_loop {
 				'fields' => 'ids',
 				'suppress_filters' => false
 			);
+			
 			$pricing_posts = get_posts( $args );
 			$car_options["cars"] = array();
 			foreach ( $car_posts as $car_post ) {
+				
 				$custom = get_post_custom($car_post->ID);
+				
 				$car_img = ( isset($custom["bizzthemes_car_image"][0]) ) ? $custom["bizzthemes_car_image"][0] : get_template_directory_uri() . '/lib_theme/images/no-img.jpg';
 				// from
 				$price_from = '<span class="from">' . __('from', 'bizzthemes') . '</span>';
@@ -147,7 +150,7 @@ class my_vehicles extends bizz_custom_loop {
 			
 			// sort the same as on booking widget
 			$car_options["cars"] = apply_filters( 'bizz_car_sort', bizz_list_sort( $car_options["cars"], 'availability' ), $car_options["cars"] );
-			
+		
 			foreach ( $car_options["cars"] as $car_post ) {
 			
 ?>
@@ -157,7 +160,7 @@ class my_vehicles extends bizz_custom_loop {
 							<img class="car_image img-polaroid" src="<?php echo $car_post['picture_src']; ?>" width="100" alt="" />
 						</div>
 						<div class="details clearfix">
-							<h2 class="car_name"><?php echo $car_post['name']; ?></h2>
+							<h2 class="car_name"><?php echo $car_post['name']; ?>iii</h2>
 							<input type="hidden" class="car_id" value="<?php echo $car_post['id']; ?>" />
 							<input type="hidden" class="car_type" value="<?php echo implode(",", $car_post["type"]); ?>" />
 							<input type="hidden" class="car_transmission" value="<?php echo $car_post["equipment"]["transmission"]; ?>" />

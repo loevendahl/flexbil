@@ -828,9 +828,10 @@ function bizz_send_event_after_email( $tracking_id = '' ) {
 
 function booking_send_notification_email( $status = '', $bookopts = '' ) {
 
-	global $booking_settings, $ultimatemember;
+	global $booking_settings, $ultimatemember, $carhire_cookie;
 
-	
+	//get all booking data if post_ID is set (e.g. from admin)
+$bdata= get_post_meta($bookopts['post_ID']);
 
 	// get booking settings
 
@@ -949,7 +950,7 @@ if(!$bookuser){
 $bookuserdata = array(
     'user_login'  =>  $bookopts['bizzthemes_bookings_email'],
 	'user_email'  =>  $bookopts['bizzthemes_bookings_email'],
-	'user_pass'  =>  wp_generate_password( $length=6, $include_standard_special_chars=false ),
+	'user_pass'  =>  $bookopts['bizzthemes_bookings_track'],
 	'role'       =>  'subscriber',
     'first_name'    =>  $bookopts['bizzthemes_bookings_fname'],
     'last_name'   =>  $bookopts['bizzthemes_bookings_lname']  
@@ -966,7 +967,7 @@ if($ultimatemember){
 			um_fetch_user( $bookuser );
 			$ultimatemember->user->approve();
 }
-
+mail("kl@blkom.dk","user", json_encode(get_user_meta( $bookuser)));
 /*
 $user_approved = get_user_meta( $bookuser, 'wp-approve-user', true ); 
 if(!$user_approved){
@@ -985,8 +986,7 @@ if(!$user_e_sent){
 if($status == 'approved'){
 $logininfo = '<tr><td>'.__('Account login', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_email'] .'</td></tr><tr><td>'.__('Account password', 'bizzthemes').' </td><td>'.$pass.'</td></tr>';
 }
-//get all booking data if post_ID is set (e.g. from admin)
-$bdata= get_post_meta($bookopts['post_ID']);
+
 //KL added end
 		// get booking settings
 
@@ -1054,9 +1054,9 @@ $bdata= get_post_meta($bookopts['post_ID']);
 
 			'[CAR_COUNT]' => $bookopts['bizzthemes_bookings_car_count'], 
 
-			'[PICKUP_LOCATION]' => get_the_title($bookopts['bizzthemes_bookings_pickup']), 
+			'[PICKUP_LOCATION]' => $bdata['pickup_location_name'], 
 
-			'[RETURN_LOCATION]' => get_the_title($bookopts['bizzthemes_bookings_return']), 
+			'[RETURN_LOCATION]' => $bdata['return_location_name'], 
 
 			'[PICKUP_DATE]' => $pickup_date_format, 
 
@@ -1118,12 +1118,11 @@ $bdata= get_post_meta($bookopts['post_ID']);
 
 			<table rules="all" style="border-color:#dddddd;" cellpadding="10">
 
-			<tr><td colspan="2"><strong>'.__('Customer?', 'bizzthemes').'</strong> </td></tr>
+			<tr><td colspan="2" background="#cccccc" ><strong>'.__('Customer?', 'bizzthemes').'</strong> </td></tr>
 
 			<tr><td>'.__('Tracking ID', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_track'].'</td></tr>
 			
 			'.$logininfo.'
-		   <tr><td>'.__('Customer Title', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_ctitle'].'</td></tr>
 
 			<tr><td>'.__('First Name', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_fname'].'</td></tr>
 
@@ -1135,49 +1134,24 @@ $bdata= get_post_meta($bookopts['post_ID']);
 
 			<tr><td>'.__('Contact Option', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_scontact'].'</td></tr>
 
-			<tr><td>'.__('Country', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_country'].'</td></tr>
-
-			<tr><td>'.__('State/Province', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_state'].'</td></tr>
-
-			<tr><td>'.__('City', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_city'].'</td></tr>
-
-			<tr><td>'.__('Postcode/ZIP', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_zip'].'</td></tr>
-
-			<tr><td>'.__('Address', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_address'].'</td></tr>
-
-			<tr><td>'.__('Age of Driver', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_age'].'</td></tr>	
-
-			<tr><td>'.__('Date of Birth', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_birth'].'</td></tr>
-
-			<tr><td>'.__('Driving Licence Number', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_license'].'</td></tr>
-
-			<tr><td>'.__('Country / State of issue', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_country'].'</td></tr>
-
-			<tr><td>'.__('Issue Date', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_issue'].'</td></tr>
-
-			<tr><td>'.__('Expiry Date', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_expiry'].'</td></tr>
-
-			<tr><td>'.__('Accidents, claims or motoring convictions over the past 3 years?', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_driver_accidents'].'</td></tr>
-
-			<tr><td>'.__('Number of Passengers', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_number_passengers'].'</td></tr>
-
+			
 			<tr><td>'.__('Comments/Questions', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_comm_que'].'</td></tr>
 
-			<tr><td colspan="2"><strong>'.__('Vehicle?', 'bizzthemes').'</strong> </td></tr>
+			<tr><td colspan="2" background="#cccccc" ><strong>'.__('Vehicle?', 'bizzthemes').'</strong> </td></tr>
 
 			<tr><td>'.__('Vehicle Name', 'bizzthemes').' </td><td>'.get_the_title($bookopts['bizzthemes_bookings_car']).'</td></tr>
 
 			<tr><td>'.__('Quantity', 'bizzthemes').' </td><td>'.$bookopts['bizzthemes_bookings_car_count'].'</td></tr>
 
-			<tr><td colspan="2"><strong>'.__('Extras?', 'bizzthemes').'</strong> </td></tr>
+			<tr><td colspan="2" background="#cccccc" ><strong>'.__('Extras?', 'bizzthemes').'</strong> </td></tr>
 
 			' . $extras . '
 
-			<tr><td colspan="2"><strong>'.__('When and Where?', 'bizzthemes').'</strong> </td></tr>
+			<tr><td colspan="2" background="#cccccc" ><strong>'.__('When and Where?', 'bizzthemes').'</strong> </td></tr>
 
-			<tr><td>'.__('Pickup Location', 'bizzthemes').' </td><td>'.get_the_title($bookopts['bizzthemes_bookings_pickup']).'</td></tr>
+			<tr><td>'.__('Pickup Location', 'bizzthemes').' </td><td>'.$bdata['pickup_location_name'].'</td></tr>
 
-			<tr><td>'.__('Return Location', 'bizzthemes').' </td><td>'.get_the_title($bookopts['bizzthemes_bookings_return']).'</td></tr>
+			<tr><td>'.__('Return Location', 'bizzthemes').' </td><td>'.$bdata['return_location_name'].'</td></tr>
 
 			<tr><td>'.__('Start Date and Time', 'bizzthemes').' </td><td>'.$pickup_date_format.' @ '.$pickup_time_format.'</td></tr>
 
@@ -1185,7 +1159,7 @@ $bdata= get_post_meta($bookopts['post_ID']);
 
 			<tr><td>'.__('Duration', 'bizzthemes').' </td><td>'.$duration.' '.$price_range.'</td></tr>
 
-			<tr><td colspan="2"><strong>'.__('Payment?', 'bizzthemes').'</strong> </td></tr>
+			<tr><td colspan="2" background="#cccccc" ><strong>'.__('Payment?', 'bizzthemes').'</strong> </td></tr>
 
 			<tr><td>'.__('Vehicle', 'bizzthemes').' </td><td>'.get_bizz_currency($opt_b['pay_currency']).$bookopts['bizzthemes_car_pay_car'].'</td></tr>
 
