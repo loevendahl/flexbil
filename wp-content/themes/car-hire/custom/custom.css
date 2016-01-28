@@ -62,7 +62,8 @@ a, a:visited, .logo-spot a, .logo-spot a:link, .logo-spot a:hover, .logo-spot a:
 	
 }
 #footer_area ul{
-    padding-left: 15px;
+    padding-left: 0px;
+	list-style: none;
 	
   
 	
@@ -117,7 +118,7 @@ article .headline_area{
 #header_area {
     background: #ffffff;
 	 padding-top: 8px;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px solid #ddd;
 }
 #featured_area {
 	background-size:cover;
@@ -128,15 +129,20 @@ article .headline_area{
 	
 	background-color: rgba(0, 0, 0, 0.3);
      color: #f4f4f4;
-		-webkit-border-radius: 20px 20px 0px 0px;
-	-moz-border-radius: 20px 20px 0px 0px;
-	border-radius: 20px 20px 0px 0px;
+		-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
 }
 .steps_tabs {
     margin-bottom: 0;
     margin-left: 0px;
-
+	border-radius: 5px 0px 0px 0px;
 }
+.nav-tabs>li>a {
+    margin-right: 1px;
+    border-radius: 0px 0px 0 0; 
+}
+
 .bookwrap{
 	-webkit-border-radius: 0px 0px 20px 20px;
 	-moz-border-radius: 0px 0px 20px 20px;
@@ -158,12 +164,25 @@ button[type="reset"]{
 	margin-top: 15px;
 	height: 32px;
 }
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #cecece;
+}
+#book_form .grp .booking_date {
+    width: 53%;
+    margin-right: 2%;
+}
+.clist li {
+
+    background-color: rgba(255, 255, 255, 0.9);
+}
 @media (min-width: 768px){
 .navbar-nav {
     float: right;
     margin: 0;
 }
 }
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #cecece;
+@media (min-width: 992px){
+#featured_area {
+    min-height: 450px;
+}
 }

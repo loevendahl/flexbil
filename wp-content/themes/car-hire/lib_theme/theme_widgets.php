@@ -420,7 +420,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer1 1', 'bizzthemes'),
 
-						'class' => 'col-sm-2',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -434,9 +434,9 @@ if ( function_exists('bizz_register_grids') ){
 
 					'footer1_two' => array(
 
-						'name' => __('Footer1 2', 'bizzthemes'),
+						'name' => __('Footer1 3', 'bizzthemes'),
 
-						'class' => 'col-sm-2',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -452,7 +452,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer1 3', 'bizzthemes'),
 
-						'class' => 'col-sm-2',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -468,7 +468,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer1 4', 'bizzthemes'),
 
-						'class' => 'col-sm-6',
+						'class' => 'col-sm-3',
 
 						'columns' => '6',
 
@@ -528,7 +528,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer 1', 'bizzthemes'),
 
-						'class' => 'col-sm-2',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -544,7 +544,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer 2', 'bizzthemes'),
 
-						'class' => 'col-sm-0',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -560,7 +560,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer 3', 'bizzthemes'),
 
-						'class' => 'col-sm-4',
+						'class' => 'col-sm-3',
 
 						'columns' => '2',
 
@@ -576,7 +576,7 @@ if ( function_exists('bizz_register_grids') ){
 
 						'name' => __('Footer 4', 'bizzthemes'),
 
-						'class' => 'col-sm-6',
+						'class' => 'col-sm-3',
 
 						'columns' => '6',
 

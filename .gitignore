@@ -30,7 +30,7 @@ $RECYCLE.BIN/
 
 # Thumbnails
 ._*
-
+dwsync.xml
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
@@ -45,3 +45,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+wp-content/themes/car-hire/custom/_notes/dwsync.xml
